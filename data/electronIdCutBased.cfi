@@ -1,0 +1,13 @@
+module eidCutBased = EleIdCutBasedRef
+{
+  
+  InputTag src = pixelMatchGsfElectrons
+  bool filter = false 
+  double threshold = 0.5
+  
+  InputTag barrelClusterShapeAssociation = hybridSuperClusters:hybridShapeAssoc
+  InputTag endcapClusterShapeAssociation = islandBasicClusters:islandEndcapShapeAssoc
+
+  include "RecoEgamma/ElectronIdentification/data/cutBasedElectronId.cfi"
+
+}
