@@ -1,0 +1,18 @@
+include "CondCore/DBCommon/data/CondDBCommon.cfi"
+
+# for CMSSW >= 1_7_X and for 2_0_0
+replace CondDBCommon.connect = "sqlite_fip:electronIdLikelihoodTkIsolated.db"
+
+# for CMSSW >= 1_6_8
+#replace CondDBCommon.connect = "sqlite_file:/afs/cern.ch/user/e/emanuele/public/4Likelihood/PDFsSQLite/CMSSW_1_6_8/electronIdLikelihoodTkIsolated.db"    
+#replace CondDBCommon.catalog = "file:/afs/cern.ch/user/e/emanuele/public/4Likelihood/PDFsSQLite/CMSSW_1_6_8/electronIdLikelihoodTkIsolated.xml"
+
+es_source = PoolDBESSource { 
+    using CondDBCommon
+    VPSet toGet = { 
+	{ 
+	    string record = "ElectronLikelihoodPdfsRcd"
+	    string tag ="ElectronLikelihoodPdfsRcd_tag"
+	}
+    }
+}

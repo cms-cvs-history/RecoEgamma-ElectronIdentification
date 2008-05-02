@@ -1,5 +1,5 @@
-include "EgammaAnalysis/ElectronIDESSources/data/likelihoodPdfsDB.cfi"
-include "EgammaAnalysis/ElectronIDESSources/data/likelihoodESetup.cfi"
+include "RecoEgamma/ElectronIdentification/data/likelihoodPdfsDB.cfi"
+include "RecoEgamma/ElectronIdentification/data/likelihoodESetup.cfi"
 module eidLikelihood = EleIdLikelihoodRef
 {
   InputTag src = pixelMatchGsfElectrons
