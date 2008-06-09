@@ -1,12 +1,15 @@
+include "RecoEcal/EgammaClusterProducers/data/geometryForClustering.cff"
 include "RecoEgamma/ElectronIdentification/data/likelihoodPdfsDB.cfi"
 include "RecoEgamma/ElectronIdentification/data/likelihoodESetup.cfi"
+
 module eidLikelihood = EleIdLikelihoodRef
 {
   InputTag src = pixelMatchGsfElectrons
   bool filter = false 
   double threshold = 0.5
-  
-  InputTag barrelClusterShapeAssociation = hybridSuperClusters:hybridShapeAssoc
-  InputTag endcapClusterShapeAssociation = islandBasicClusters:islandEndcapShapeAssoc
+
+  bool doLikelihood = true
+  InputTag reducedBarrelRecHitCollection = reducedEcalRecHitsEB 
+  InputTag reducedEndcapRecHitCollection = reducedEcalRecHitsEE
 
 }

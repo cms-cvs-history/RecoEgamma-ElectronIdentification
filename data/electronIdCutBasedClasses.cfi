@@ -1,3 +1,5 @@
+include "RecoEcal/EgammaClusterProducers/data/geometryForClustering.cff"
+
 module eidCutBasedClasses = EleIdCutBasedRef
 {
   
@@ -5,8 +7,8 @@ module eidCutBasedClasses = EleIdCutBasedRef
   bool filter = false 
   double threshold = 0.5
   
-  InputTag barrelClusterShapeAssociation = hybridSuperClusters:hybridShapeAssoc
-  InputTag endcapClusterShapeAssociation = islandBasicClusters:islandEndcapShapeAssoc
+  InputTag reducedBarrelRecHitCollection = reducedEcalRecHitsEB 
+  InputTag reducedEndcapRecHitCollection = reducedEcalRecHitsEE
 
   include "RecoEgamma/ElectronIdentification/data/ptdrElectronId.cfi"
 
