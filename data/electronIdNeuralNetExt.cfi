@@ -1,0 +1,16 @@
+include "RecoEgamma/ElectronIdentification/data/neuralNetElectronId.cfi"
+
+module eidNeuralNetExt = EleIdNeuralNetExtProducer
+{
+  InputTag src = pixelMatchGsfElectrons
+  bool filter = false 
+  double threshold = 0.5
+  
+  bool doNeuralNet = true
+  
+  InputTag barrelClusterShapeAssociation = hybridSuperClusters:hybridShapeAssoc
+  InputTag endcapClusterShapeAssociation = islandBasicClusters:islandEndcapShapeAssoc
+
+  using NeuralNet
+
+}
