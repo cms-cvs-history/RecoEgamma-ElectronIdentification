@@ -7,9 +7,6 @@ module eidNeuralNetExt = EleIdNeuralNetExtProducer
   double threshold = 0.5
   
   bool doNeuralNet = true
-  
-  InputTag barrelClusterShapeAssociation = hybridSuperClusters:hybridShapeAssoc
-  InputTag endcapClusterShapeAssociation = islandBasicClusters:islandEndcapShapeAssoc
 
   using NeuralNet
 
