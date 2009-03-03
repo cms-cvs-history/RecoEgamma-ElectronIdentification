@@ -95,7 +95,7 @@ double PTDRElectronID::result(const reco::GsfElectron* electron,
   if (useHoverE_[variables_]) {
     double value = electron->hadronicOverEm();
     std::vector<double> maxcut = cuts_.getParameter<std::vector<double> >("HoverE");
-    if (fabs(value)>maxcut[icut]) return 0.;
+    if (value>maxcut[icut]) return 0.;
   }
 
   if (useEoverPOut_[variables_]) {
