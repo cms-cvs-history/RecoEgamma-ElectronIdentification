@@ -9,20 +9,25 @@ public:
 
   CutBasedElectronID(){};
 
-  virtual ~CutBasedElectronID(){};
+  virtual ~CutBasedElectronID() {};
 
   void setup(const edm::ParameterSet& conf);
   double result(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
+  double cicSelection(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
+  double robustSelection(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
   int classify(const reco::GsfElectron*);
   
  private:
-  
+  bool wantBinning_;
+  bool newCategories_;
+  bool dataMagneticFieldSetUp_;
   std::string type_;
   std::string quality_;
   std::string version_;
-  edm::InputTag verticesCollection;
+  edm::InputTag verticesCollection_;
   edm::ParameterSet cuts_;
-  
+  edm::InputTag dcsTag_;
+
 };
 
 #endif // CutBasedElectronID_H
