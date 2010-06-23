@@ -507,7 +507,7 @@ double CutBasedElectronID::robustSelection(const reco::GsfElectron* electron ,
 
     if ((hOverE < cut[0]) && (sigmaee < cut[1]) && (fabs(deltaPhiIn) < cut[2]) &&
         (fabs(deltaEtaIn) < cut[3]) && (e25Maxoe55 > cut[4]) && (e15oe55 > cut[5]) &&
-        (sigmaee >= cut[18]) && (eOverP > cut[19] ||  eOverP < cut[20])) {
+        (sigmaee >= cut[18]) && (eOverP > cut[19] &&  eOverP < cut[20])) {
       result = result + 1;
     }
 
