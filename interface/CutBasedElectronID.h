@@ -14,6 +14,8 @@ public:
   void setup(const edm::ParameterSet& conf);
   double result(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
   double cicSelection(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
+  bool compute_cut(double x, double et, double cut_min, double cut_max, bool gtn=false);
+
   double robustSelection(const reco::GsfElectron*, const edm::Event&, const edm::EventSetup&);
   int classify(const reco::GsfElectron*);
   
