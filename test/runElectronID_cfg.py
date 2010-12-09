@@ -64,12 +64,20 @@ process.eIDTight.electronQuality = 'tight'
 #process.eIDClassesTight = eidCutBasedClassesExt.clone()
 #process.eIDClassesTight.electronQuality = 'tight'
 
+
+process.load("RecoEgamma.ElectronIdentification.cutsInCategoriesElectronIdentificationV06_DataTuning_cfi")
+
 eIDSequence = cms.Sequence(process.eIDRobustLoose+
                            process.eIDRobustLooseV00+
                            process.eIDRobustTight+
                            process.eIDRobustHighEnergy+
                            process.eIDLoose+
-                           process.eIDTight)
+                           process.eIDTight+
+                           process.eidVeryLoose+
+                           process.eidLoose+
+                           process.eidTight+
+                           process.eidHyperTight2+
+                           process.eidHyperTight4)
 #                           process.eIDClassesLoose+ 
 #                           process.eIDClassesMedium+ 
 #                           process.eIDClassesTight )
